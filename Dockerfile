@@ -1,5 +1,9 @@
 FROM store/oracle/serverjre:8
 
+LABEL Author="Matheus Lozano" \
+      Github="github.com/lozanomatheus/jenkins_autobuild" \
+      Dockerhub="cloud.docker.com/repository/docker/lozanomatheus/jenkins"
+
 RUN yum -y update \
     && yum -y install procps git vim \
     && yum clean all || rm -rf /var/cache/yum
