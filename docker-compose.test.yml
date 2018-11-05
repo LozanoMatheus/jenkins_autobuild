@@ -1,3 +1,0 @@
-sut:
-  build: .
-  command: curl -v http://localhost:8080/
