@@ -22,5 +22,4 @@ EXPOSE 80:8080/tcp 50000:50000/tcp
 
 ENV projectName=lozanomatheus/aws-sdk-test
 
-CMD ["/opt/jenkins/startup.sh"]
-# ENTRYPOINT ["/opt/jenkins/startup.sh"]
+ENTRYPOINT ["/opt/jenkins/startup.sh"]
