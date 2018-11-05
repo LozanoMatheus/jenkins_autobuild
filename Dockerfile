@@ -22,4 +22,5 @@ ADD --chown=jenkins:jenkins jenkins.tar.gz /opt/jenkins
 
 ENV projectName=lozanomatheus/aws-sdk-test
 
-ENTRYPOINT ["/opt/jenkins/startup.sh"]
+CMD ["/opt/jenkins/startup.sh"]
+# ENTRYPOINT ["/opt/jenkins/startup.sh"]
