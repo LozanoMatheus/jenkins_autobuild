@@ -18,7 +18,7 @@ RUN groupadd --gid 1000 jenkins \
     && chown -R jenkins. /opt/jenkins
 
 USER jenkins
-EXPOSE 80:8080/tcp 50000:50000/tcp
+EXPOSE 8080:8080/tcp 50000:50000/tcp
 
 ENV projectName=lozanomatheus/aws-sdk-test
 
