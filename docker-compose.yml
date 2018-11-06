@@ -1,5 +1,0 @@
-jenkins:
-  build: .
-  dockerfile: Dockerfile
-  ports:
-    - "80:8080"
