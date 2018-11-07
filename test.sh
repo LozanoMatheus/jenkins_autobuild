@@ -5,7 +5,7 @@ ss -tuan
 docker ps
 docker-compose ps
 sleep 60s
-if curl -v http://172.17.0.2:8080$PING_URL | grep -i "pong" ; then
+if curl -v http://localhost:8080$PING_URL | grep -i "pong" ; then
   echo "Tests passed!"
   exit 0
 else

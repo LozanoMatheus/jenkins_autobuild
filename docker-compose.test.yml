@@ -1,3 +1,3 @@
 sut:
   build: .
-  command: test.sh
+  command: echo "Fake test with Docker Cloud."
