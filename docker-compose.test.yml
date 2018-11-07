@@ -1,8 +1,3 @@
 sut:
   build: .
-  dockerfile: Dockerfile.test
-  links:
-    - jenkins
-jenkins:
-  build: .
-  dockerfile: Dockerfile
+  command: test.sh
