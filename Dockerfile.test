@@ -1,5 +1,5 @@
 FROM alpine
 
-RUN echo 'wget http://jenkins:8080' > /test.sh
+RUN echo 'sleep 60s ; wget http://jenkins:8080' > /test.sh
 
 CMD ["sh", "test.sh"]
