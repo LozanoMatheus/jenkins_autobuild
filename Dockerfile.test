@@ -1,2 +1,7 @@
 FROM alpine
 
+RUN cat << EOF > /test.sh
+wget http://jenkins:8080
+EOF
+
+CMD ["wget", "localhost:8080"]
