@@ -1,0 +1,13 @@
+FROM alpine:3.8
+
+RUN set -ex \
+  && apk add --no-cache --virtual .fetch-deps \
+    curl \
+  && addgroup -g 1000 autotest_user \
+  && adduser -h /home/autotest_user -s /sbin/nologin -G autotest_user -D -u 1000 autotest_user
+
+USER autotest_user
+
+ADD test.sh /home/autotest_user
+
+ENTRYPOINT ["sh", "/home/autotest_user/test.sh"]
