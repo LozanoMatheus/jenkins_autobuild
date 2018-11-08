@@ -2,4 +2,4 @@ FROM alpine
 
 RUN echo 'wget http://jenkins:8080' > /test.sh
 
-CMD ["bash", "test.sh"]
+CMD ["sh", "test.sh"]
