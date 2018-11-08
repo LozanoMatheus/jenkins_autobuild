@@ -1,15 +1,13 @@
-version: '3.2'
-services:
-  sut:
-    build:
-      context: .
-      dockerfile: docker_autotests/Dockerfile.test
-    links:
-      - jenkins
+sut:
+  build:
+    context: .
+    dockerfile: docker_autotests/Dockerfile.test
+  links:
+    - jenkins
 
-  jenkins:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - 8080:8080
+jenkins:
+  build:
+    context: .
+    dockerfile: Dockerfile
+  ports:
+    - 8080:8080
