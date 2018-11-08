@@ -15,8 +15,7 @@ RUN curl -L http://mirrors.jenkins.io/war-stable/latest/jenkins.war -o /opt/jenk
     && LATEST_VERSION=$(curl -Ls -o /dev/null -w %{url_effective} https://github.com/hashicorp/terraform/releases/latest | sed 's/.*tag\///') \
     && curl -L https://github.com/hashicorp/terraform/archive/${LATEST_VERSION}.tar.gz -o /tmp/terraform.tar.gz \
     && tar xf /tmp/terraform.tar.gz -C /bin \
-    && chown -R jenkins. /opt/jenkins \
-    && ls -lahrt / /opt /opt/jenkins /opt/jenkins/.jenkins
+    && chown -R jenkins. /opt/jenkins
 
 USER jenkins
 EXPOSE 8080:8080/tcp 50000:50000/tcp
