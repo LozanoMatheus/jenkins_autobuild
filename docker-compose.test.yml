@@ -1,6 +1,6 @@
 sut:
   build:
-    context: ./docker_autotests
+    context: docker_autotests/
     dockerfile: Dockerfile.test
   links:
     - jenkins
