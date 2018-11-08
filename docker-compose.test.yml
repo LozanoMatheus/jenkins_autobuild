@@ -1,11 +1,13 @@
 sut:
-  build: .
-  dockerfile: Dockerfile.test
+  build:
+    context: .
+    dockerfile: Dockerfile.test
   links:
     - jenkins
 
 jenkins:
-  build: .
-  dockerfile: Dockerfile
+  build:
+    context: .
+    dockerfile: Dockerfile
   ports:
     - 8080:8080
