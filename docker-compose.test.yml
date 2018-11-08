@@ -1,5 +1,5 @@
 sut:
-  build: .
+  build: Dockerfile.test
   command: echo "Testing autotest from Docker Cloud."
 #   links:
 #     - jenkins
