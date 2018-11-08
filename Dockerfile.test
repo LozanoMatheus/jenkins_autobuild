@@ -1,10 +1,13 @@
-FROM alpine
+FROM alpine:3.8
 
-# RUN echo 'date ; sleep 240s ; date ; wget http://jenkins:8080' > /test.sh
-RUN echo 'date \n\
+RUN set -ex \
+  && apk add --no-cache --virtual .fetch-deps \
+    curl \
+  && echo -e 'date \n\
 sleep 240s \n\
 date \n\
 wget http://jenkins:8080/metrics/SdQQ16tu23EA94AtNqp_zmMyq0GyO2V85N1TkH4a2BTqeWIFXRZaUq9CqrCrPSqk/ping \n\
-' > /test.sh
+' > /test.sh \
+  && apk del .fetch-deps
 
-CMD ["sh", "test.sh"]
+ENTRYPOINT ["sh", "test.sh"]
