@@ -1,5 +1,2 @@
-FROM ubuntu:trusty
+FROM alpine
 
-ADD test.sh /app/test.sh
-
-CMD ["bash", "test.sh"]
