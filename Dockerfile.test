@@ -3,11 +3,9 @@ FROM alpine:3.8
 RUN set -ex \
   && apk add --no-cache --virtual .fetch-deps \
     curl \
-  && echo -e 'date \n\
-sleep 240s \n\
-date \n\
-wget http://jenkins:8080/metrics/SdQQ16tu23EA94AtNqp_zmMyq0GyO2V85N1TkH4a2BTqeWIFXRZaUq9CqrCrPSqk/ping \n\
-' > /test.sh \
-  && apk del .fetch-deps
+  && addgroup -g 1000 autotest_user \
+  && adduser -h /home/autotest_user -s /sbin/nologin -G autotest_user -D -u 1000 autotest_user
 
-ENTRYPOINT ["sh", "test.sh"]
+ADD test.sh /home/autotest_user
+
+ENTRYPOINT ["sh", "/home/autotest_user/test.sh"]
