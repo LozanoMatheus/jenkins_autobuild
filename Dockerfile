@@ -7,6 +7,7 @@ LABEL Author="Matheus Lozano" \
 RUN set -ex \
   && apk add --no-cache --virtual .fetch-deps \
     curl \
+  && mkdir /opt \
   && addgroup -g 1000 jenkins \
   && adduser -h /opt/jenkins -s /sbin/nologin -G jenkins -D -u 1000 jenkins \
   && curl -L http://mirrors.jenkins.io/war-stable/latest/jenkins.war -o /opt/jenkins/jenkins.war \
