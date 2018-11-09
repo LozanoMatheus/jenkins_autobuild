@@ -1,6 +1,6 @@
 sut:
   build: .
-  dockerfile: dockercloud_autotest/Dockerfile.test
+  dockerfile: Dockerfile.test
   links:
     - jenkins
 
