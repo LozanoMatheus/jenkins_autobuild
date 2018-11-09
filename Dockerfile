@@ -9,7 +9,7 @@ RUN groupadd --gid 1000 jenkins \
     && yum -y update \
     && yum clean all || rm -rf /var/cache/yum
 
-ADD --chown=jenkins:jenkins jenkins.tar.gz /opt/jenkins
+ADD jenkins.tar.gz /opt/jenkins
 
 RUN curl -L http://mirrors.jenkins.io/war-stable/latest/jenkins.war -o /opt/jenkins/jenkins.war \
     && LATEST_VERSION=$(curl -Ls -o /dev/null -w %{url_effective} https://github.com/hashicorp/terraform/releases/latest | sed 's/.*tag\///') \
