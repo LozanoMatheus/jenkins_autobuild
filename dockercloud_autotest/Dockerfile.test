@@ -1,0 +1,19 @@
+FROM alpine:3.8
+
+ENV SOURCE_BRANCH="example_docker_autotest" \
+    GIT_URL="https://raw.githubusercontent.com/LozanoMatheus/jenkins_autobuild" \
+    GIT_PATH="dockercloud_autotest" \
+    AUTOTEST_SCRIPT="test.sh"
+
+RUN set -ex \
+  && apk add --no-cache --virtual .fetch-deps \
+    curl \
+  && addgroup -g 1000 autotest_user \
+  && adduser -h /home/autotest_user -s /sbin/nologin -G autotest_user -D -u 1000 autotest_user \
+  && curl "$GIT_URL/$SOURCE_BRANCH/$GIT_PATH/$AUTOTEST_SCRIPT" -o /home/autotest_user/$AUTOTEST_SCRIPT \
+  && chown autotest_user. /home/autotest_user/$AUTOTEST_SCRIPT \
+  && chmod 0500 /home/autotest_user/$AUTOTEST_SCRIPT
+
+USER autotest_user
+
+ENTRYPOINT ["/bin/sh", "/home/autotest_user/test.sh"]
