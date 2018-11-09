@@ -10,4 +10,4 @@ USER autotest_user
 
 ADD dockercloud_autotest/test.sh /home/autotest_user
 
-ENTRYPOINT ["sh", "/home/autotest_user/test.sh"]
+ENTRYPOINT ["/bin/sh", "/home/autotest_user/test.sh"]
