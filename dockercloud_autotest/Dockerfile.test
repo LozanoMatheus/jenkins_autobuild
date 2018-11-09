@@ -1,6 +1,6 @@
 FROM alpine:3.8
 
-ENV SOURCE_BRANCH="example_docker_autotest" \
+ENV SOURCE_BRANCH="master" \
     GIT_URL="https://raw.githubusercontent.com/LozanoMatheus/jenkins_autobuild" \
     GIT_PATH="dockercloud_autotest" \
     AUTOTEST_SCRIPT="test.sh"
