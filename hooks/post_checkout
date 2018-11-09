@@ -1,6 +1,8 @@
 #!/bin/bash
 
-cat <<\EOF > dockercloud_autotest/test.sh
+echo "Hello Meeeee"
+
+cat <<\EOF > test.sh
 #!/bin/bash
 
 set -ex
