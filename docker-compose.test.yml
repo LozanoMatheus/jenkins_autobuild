@@ -1,7 +1,6 @@
 sut:
   build: .
   dockerfile: dockercloud_autotest/Dockerfile.test
-  command: sh /home/autotest_user/test.sh
   links:
     - jenkins
 
