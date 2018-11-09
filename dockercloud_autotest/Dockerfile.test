@@ -8,6 +8,6 @@ RUN set -ex \
 
 USER autotest_user
 
-COPY dockercloud_autotest/test.sh /home/autotest_user
+ADD dockercloud_autotest/test.sh /home/autotest_user/
 
 ENTRYPOINT ["/home/autotest_user/test.sh"]
